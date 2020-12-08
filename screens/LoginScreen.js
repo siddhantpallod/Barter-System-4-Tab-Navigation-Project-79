@@ -23,7 +23,7 @@ export default class LoginScreen extends React.Component{
     userLogin = (email,password) => {
         firebase.auth().signInWithEmailAndPassword(email,password)
         .then(() => {
-            this.props.navigation.navigate('HomeScreen')
+            this.props.navigation.navigate('Home')
             return Alert.alert("Successfull Login")
         })
         .catch((error) => {
@@ -74,7 +74,6 @@ export default class LoginScreen extends React.Component{
                         <Text style = {{
                             fontSize : 20,
                             textAlign : 'center',
-                            fontWeight : 600
                         }}> Registration </Text>
                         <TextInput
                         style = {styles.inputBox1}
@@ -287,7 +286,6 @@ const styles = StyleSheet.create({
         fontSize : 30,
         textAlign : 'center',
         marginTop : 10,
-        fontWeight : 600
     },
     inputBox : {
         width : 200,

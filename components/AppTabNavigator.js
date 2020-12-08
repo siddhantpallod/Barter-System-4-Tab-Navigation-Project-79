@@ -1,11 +1,35 @@
 import React from 'react';
-import {View,Text} from 'react-native';
+import {Image} from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import HomeScreen from '../screens/HomeSreen';
 import ExchangeScreen from '../screens/ExchangeScreen';
 
 export const AppTabNavigator = createBottomTabNavigator({
-    Home : {screen : HomeScreen},
-    Exchange : {screen : ExchangeScreen}
+    Home : {screen : HomeScreen,
+    navigationOptions : {
+        tabBarIcon : 
+        <Image
+            style = {{
+                width : 30,
+                height : 30
+            }}
+
+            source = {require('../assets/Home.png')}
+        />
+        }   
+    },
+    Exchange : {screen : ExchangeScreen,
+        navigationOptions : {
+            tabBarIcon : 
+            <Image
+                style = {{
+                    width : 30,
+                    height : 30
+                }}
+    
+                source = {require('../assets/Exchange.png')}
+            />
+    }
+}
 })
 
